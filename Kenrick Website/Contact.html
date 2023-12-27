@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> SMAW</title> 
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+   </head>
+<body>
+  <nav>
+    <div class="menu">
+      <div class="logo">
+       <a href="index.html">SMAW</a>
+      </div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="About.html">About</a></li>
+        <li><a href="Services.html">Services</a></li>
+        <li><a href="Contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+  </nav>
+ <div class="content">
+   <div class="center" style="margin-top: 400px;">
+  <div class="title"><h1>CONTACT US</h1></div>
+  <div class="sub_title">Contact us the SMAW. A skilled welder can create magic out of metal.
+  </div>
+   <div class="Contact">
+     <div class="dropdown">
+	<a href="https://docs.google.com/forms/d/e/1FAIpQLSfr-BPnNUdYM3CtWRI0X027rv4QgTyVd8SUY2XgNO3O4vSuEg/viewform?usp=pp_url" target="_blank" rel="noopener noreferrer">
+    <button id="careerButton" class="dropbtn" style="margin-top: 360px">Contact Us</button>
+	</a>		
+          </div>
+	   <div class="dropdown">
+	<a href="https://docs.google.com/forms/d/e/1FAIpQLSdQ5n_1xCECs4XVKlAY-l9ueoBdX6DvD7mqJ2RnXOIT6FJHSw/viewform?usp=pp_url" target="_blank" rel="noopener noreferrer">
+    <button id="careerButton" class="dropbtn">Send Us Your Feedback</button>
+	</a>		
+          </div>
+		  </div>
+			<img src="Feedback.jpg" alt="Kenrick" style="width: 400px; height: auto;">
+		  </div>  
+</div>
+   <script>
+  // Get all the anchor tags within the menu
+  const menuItems = document.querySelectorAll('.menu ul li a');
+
+  // Loop through each menu item
+  menuItems.forEach(item => {
+    // Check if the href matches the current URL
+    if (window.location.href.includes(item.getAttribute('href'))) {
+      // Add 'active' class to the matched menu item
+      item.classList.add('active');
+    }
+
+    // Add a click event listener to each menu item
+    item.addEventListener('click', function(event) {
+      // Remove 'active' class from all menu items
+      menuItems.forEach(link => link.classList.remove('active'));
+
+      // Add 'active' class to the clicked menu item
+      this.classList.add('active');
+    });
+  });
+</script>
+</body>
+</html>

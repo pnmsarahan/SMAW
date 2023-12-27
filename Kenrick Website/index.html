@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> SMAW</title> 
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+   </head>
+<body>
+  <nav>
+    <div class="menu">
+      <div class="logo">
+        <a href="index.html">SMAW</a>
+      </div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="About.html">About</a></li>
+        <li><a href="Services.html">Services</a></li>
+        <li><a href="Contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+  </nav>
+	 <div class="content">
+  <div class="center">
+   <div class="welding-image welding-1">
+  <div class="title">Shielded Metal Arc Welding</div>
+  <div class="sub_title">Ignite Your Passion for Welding</div>
+</div>
+	<div class="welding-image welding-3">
+	
+	</div>
+ <!-- Second Image: Welding2 -->
+      <div class="welding-image welding-2">
+        <div class="title">What is <mark>SMAW</mark>?</div>
+        <div class="purpose">
+          <p>Shielded Metal Arc Welding (SMAW), or stick welding, is crucial in various industries due to its versatility, adaptability to different environments, and cost-effectiveness. Its ability to weld a wide range of materials, produce high-strength welds, and facilitate emergency repairs makes it a reliable and accessible choice. SMAW's simplicity also makes it ideal for training novice welders, ensuring its continued importance in diverse industrial applications, from construction and infrastructure projects to emergency repairs and field welding.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+   <script>
+  // Get all the anchor tags within the menu
+  const menuItems = document.querySelectorAll('.menu ul li a');
+
+  // Loop through each menu item
+  menuItems.forEach(item => {
+    // Check if the href matches the current URL
+    if (window.location.href.includes(item.getAttribute('href'))) {
+      // Add 'active' class to the matched menu item
+      item.classList.add('active');
+    }
+
+    // Add a click event listener to each menu item
+    item.addEventListener('click', function(event) {
+      // Remove 'active' class from all menu items
+      menuItems.forEach(link => link.classList.remove('active'));
+
+      // Add 'active' class to the clicked menu item
+      this.classList.add('active');
+    });
+  });
+</script>
+</body>
+</html>

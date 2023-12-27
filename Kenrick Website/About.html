@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> SMAW</title> 
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+   </head>
+<body>
+  <nav>
+    <div class="menu">
+      <div class="logo">
+       <a href="index.html">SMAW</a>
+      </div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="About.html">About</a></li>
+        <li><a href="Services.html">Services</a></li>
+        <li><a href="Contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="center">
+	 <div class="About-1">
+    <div class="title">About Shield Metal Arc Welding</div>
+    <div class="sub_title">The Welders</div>
+      <div class="btns">
+         <button onclick="toggleProfile('profile1')">Maladaga, Kenrick N.</button>
+        <button onclick="toggleProfile('profile2')">Aranilla, Pierre Paolo C.</button>
+      </div>
+	   <!-- Profiles -->
+      <div id="profile1" class="profile">
+        <!-- Profile content for Maladaga -->
+		<img src="Kenrick.jpg" alt="Kenrick" style="width: 200px; height: auto;">
+        <h2 style="color: white;">Maladaga, Kenrick N.</h2>
+        <!-- Add profile details here -->
+      </div>
+      <div id="profile2" class="profile">
+        <!-- Profile content for Aranilla -->
+		<img src="Aranilla.jpg" alt="Aranilla" style="width: 200px; height: auto;">
+        <h2 style="color: white;">Aranilla, Pierre Paolo C.</h2>
+        <!-- Add profile details here -->
+      </div>
+	<div class="dropdown">
+		<button id="careerButton" class="dropbtn">Career Opportunities</button>
+			<div id="careerContent" class="dropdown-content">
+            <div onclick="toggleContent('career')">
+              <ul><h3>Career Opportunities</h3></ul>
+              <ul><h4>Construction:</h4></ul>
+              <ul><p>Welders are employed in the construction industry to work on structural components, bridges, pipelines, and other infrastructure projects. Skilled welders are often needed for both residential and commercial construction projects.</p></ul>
+              <ul><h4>Manufacturing and Fabrication:</h4></ul>
+              <ul><p>Welders play a crucial role in the manufacturing sector, working on the fabrication of metal products, machinery, and equipment. This includes industries such as automotive, aerospace, and consumer goods.</p></ul>
+              <ul><h4>Infrastructure and Bridge Construction:</h4></ul>
+              <ul><p>Welders are needed for the construction and maintenance of bridges, highways, and other infrastructure projects. This may involve working with various welding techniques and materials.</p></ul>
+            </div>
+          </div>
+        </div>
+        <div class="dropdown">
+			<button id="environmentalButton" class="dropbtn">Environmental, Social and Purpose</button>
+				<div id="environmentalSocialPurposeContent" class="dropdown-content" style="display: none;">
+            <!-- Environmental, Social and Purpose content -->
+            <div>
+              <ul>
+                <h3>Environmental, Social and Purpose</h3>
+              </ul>
+              <ul>
+                <h4>Environmental Impact:</h4>
+                <li><p><i>Material Efficiency: </i>Welders play a crucial role in ensuring efficient use of materials, minimizing waste during the fabrication and construction processes.</p></li>
+				<li><p><i>Energy Consumption: </i>The welding process itself involves energy consumption. Welders can contribute to environmental sustainability by adopting energy-efficient welding techniques and technologies.</p></li>
+				<li><p><i>Environmental Compliance: </i>Welders need to adhere to environmental regulations and standards to minimize the impact of their work on the environment.</p></li>
+			  </ul>
+              <ul>
+                <h4>Social Impact:</h4>
+                 <li><p><i>Safety:  </i>Welders contribute to workplace safety by following strict safety protocols. Ensuring a safe working environment is essential to protect both the welder and their colleagues.</p></li>
+				<li><p><i>Job Creation:  </i>The welding industry, especially in construction and manufacturing, contributes to job creation and economic development in local communities.</p></li>
+				<li><p><i>Skill Development:  </i>Welders often engage in continuous learning and skill development. This not only enhances their own career prospects but also contributes to a skilled workforce in the community.</p></li>
+		      </ul>
+           
+            </div>
+          </div>
+        </div>
+		<div class="dropdown">
+  <button onclick="togglePurposeContent()" class="dropbtn">Purpose and Ethical Considerations</button>
+  <div id="purposeContent" class="dropdown-content" style="display: none;">
+    <!-- Purpose and Ethical Considerations content -->
+    <div>
+      <ul>
+        <h3>Purpose and Ethical Considerations</h3>
+        <li>
+          <p><i>Quality Workmanship:</i> Welders take pride in producing high-quality work. Ensuring the structural integrity of welded components is not only a professional responsibility but also a commitment to ethical practices.</p>
+        </li>
+        <li>
+          <p><i>Project Contributions:</i> Welders contribute to the completion of various projects, from constructing buildings to manufacturing products. Knowing that their work is a vital part of these projects can give a sense of purpose.</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+		
+      </div>
+    </div>
+
+   <script>
+  // Get all the anchor tags within the menu
+  const menuItems = document.querySelectorAll('.menu ul li a');
+
+  // Loop through each menu item
+  menuItems.forEach(item => {
+    // Check if the href matches the current URL
+    if (window.location.href.includes(item.getAttribute('href'))) {
+      // Add 'active' class to the matched menu item
+      item.classList.add('active');
+    }
+
+    // Add a click event listener to each menu item
+    item.addEventListener('click', function(event) {
+      // Remove 'active' class from all menu items
+      menuItems.forEach(link => link.classList.remove('active'));
+
+      // Add 'active' class to the clicked menu item
+      this.classList.add('active');
+    });
+  });
+  
+   // Function to hide all profiles
+    function hideAllProfiles() {
+      var profiles = document.querySelectorAll('.profile');
+      profiles.forEach(function(profile) {
+        profile.classList.remove('active-profile');
+      });
+    }
+
+    // Function to toggle profile visibility
+    function toggleProfile(profileId) {
+      var profile = document.getElementById(profileId);
+      var isActive = profile.classList.contains('active-profile');
+
+      // Hide all profiles first
+      hideAllProfiles();
+
+      // Show the clicked profile if it's not already active
+      if (!isActive) {
+        profile.classList.add('active-profile');
+      }
+    }
+	
+function toggleCareerContent() {
+  var careerContent = document.getElementById('careerContent');
+  var environmentalContent = document.getElementById('environmentalSocialPurposeContent');
+  var purposeContent = document.getElementById('purposeContent');
+
+  if (careerContent.style.display === 'block') {
+    careerContent.style.display = 'none';
+  } else {
+    careerContent.style.display = 'block';
+    environmentalContent.style.display = 'none';
+    purposeContent.style.display = 'none';
+  }
+}
+
+function toggleEnvironmentalContent() {
+  var careerContent = document.getElementById('careerContent');
+  var environmentalContent = document.getElementById('environmentalSocialPurposeContent');
+  var purposeContent = document.getElementById('purposeContent');
+
+  if (environmentalContent.style.display === 'block') {
+    environmentalContent.style.display = 'none';
+  } else {
+    environmentalContent.style.display = 'block';
+    careerContent.style.display = 'none';
+    purposeContent.style.display = 'none';
+  }
+}
+
+function togglePurposeContent() {
+  var careerContent = document.getElementById('careerContent');
+  var environmentalContent = document.getElementById('environmentalSocialPurposeContent');
+  var purposeContent = document.getElementById('purposeContent');
+
+  if (purposeContent.style.display === 'block') {
+    purposeContent.style.display = 'none';
+  } else {
+    purposeContent.style.display = 'block';
+    careerContent.style.display = 'none';
+    environmentalContent.style.display = 'none';
+  }
+}
+
+// Event listeners for the buttons
+var careerButton = document.getElementById('careerButton');
+var environmentalButton = document.getElementById('environmentalButton');
+var purposeButton = document.getElementById('purposeButton');
+
+careerButton.addEventListener('click', function() {
+  toggleCareerContent();
+});
+
+environmentalButton.addEventListener('click', function() {
+  toggleEnvironmentalContent();
+});
+
+purposeButton.addEventListener('click', function() {
+  togglePurposeContent();
+});
+
+</script>
+</body>
+</html>

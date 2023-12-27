@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> SMAW</title> 
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+   </head>
+<body>
+  <nav>
+    <div class="menu">
+      <div class="logo">
+       <a href="index.html">SMAW</a>
+      </div>
+      <ul>
+         <li><a href="index.html">Home</a></li>
+        <li><a href="About.html">About</a></li>
+        <li><a href="Services.html">Services</a></li>
+        <li><a href="Contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="center" style="margin-top: 30px;">
+  <div class="title"><h1>Services</h1></div>
+  <div class="sub_title" style="margin-top: 5px;">See What We Offer</div>
+  <div style="margin-top: 5px;">
+     <div class="dropdown">
+		<button id="careerButton" class="dropbtn">Structural Welding</button>
+			<div id="careerContent" class="dropdown-content">
+            <div onclick="toggleContent('career')">
+			<img src="StructuralServices.jpg" alt="Kenrick" style="width: 100%; height: auto;">
+              <ul><h4>Structural Welding</h4></ul>
+                <ul><p>SMAW is frequently used in the construction industry for structural welding. Welders employ SMAW to join structural steel components, such as beams, columns, and girders, in the construction of buildings, bridges, and other infrastructure.</p></ul>
+            </div>
+          </div>
+        </div>
+        <div class="dropdown">
+			<button id="environmentalButton" class="dropbtn">Pipe Welding:</button>
+				<div id="environmentalSocialPurposeContent" class="dropdown-content" style="display: none;">
+            <!-- Environmental, Social and Purpose content -->
+            <div>
+			<img src="PipeWelding.jpg" alt="Kenrick" style="width: 100%; height: auto;">
+              <ul><h4>Pipe Welding</h4></ul>
+                <ul><p>SMAW is commonly used for welding pipes, both in construction and in industries such as oil and gas. Welders use this method to join pipes of different materials and thicknesses, creating strong and durable connections.</p></ul>
+            </div>
+          </div>
+        </div>
+		<div class="dropdown">
+  <button onclick="togglePurposeContent()" class="dropbtn">Repair and Maintenance</button>
+  <div id="purposeContent" class="dropdown-content" style="display: none;">
+    <!-- Purpose and Ethical Considerations content -->
+    <div>
+      	<img src="Repair.jpg" alt="Kenrick" style="width: 100%; height: auto;">
+              <ul><h4>Repair and Maintenance Welding</h4></ul>
+                <ul><p>Welders often use SMAW for repair and maintenance work. This includes fixing damaged metal structures, equipment, or machinery. SMAW is suitable for on-site repairs and is versatile enough to handle various repair tasks.</p></ul>
+
+    </div>
+  </div>
+</div>
+		
+    </div>
+   </div>
+   
+   
+   <script>
+  	
+	// Get all the anchor tags within the menu
+  const menuItems = document.querySelectorAll('.menu ul li a');
+
+  // Loop through each menu item
+  menuItems.forEach(item => {
+    // Check if the href matches the current URL
+    if (window.location.href.includes(item.getAttribute('href'))) {
+      // Add 'active' class to the matched menu item
+      item.classList.add('active');
+    }
+
+    // Add a click event listener to each menu item
+    item.addEventListener('click', function(event) {
+      // Remove 'active' class from all menu items
+      menuItems.forEach(link => link.classList.remove('active'));
+
+      // Add 'active' class to the clicked menu item
+      this.classList.add('active');
+    });
+  });
+	
+function toggleCareerContent() {
+  var careerContent = document.getElementById('careerContent');
+  var environmentalContent = document.getElementById('environmentalSocialPurposeContent');
+  var purposeContent = document.getElementById('purposeContent');
+
+  if (careerContent.style.display === 'block') {
+    careerContent.style.display = 'none';
+  } else {
+    careerContent.style.display = 'block';
+    environmentalContent.style.display = 'none';
+    purposeContent.style.display = 'none';
+  }
+}
+
+function toggleEnvironmentalContent() {
+  var careerContent = document.getElementById('careerContent');
+  var environmentalContent = document.getElementById('environmentalSocialPurposeContent');
+  var purposeContent = document.getElementById('purposeContent');
+
+  if (environmentalContent.style.display === 'block') {
+    environmentalContent.style.display = 'none';
+  } else {
+    environmentalContent.style.display = 'block';
+    careerContent.style.display = 'none';
+    purposeContent.style.display = 'none';
+  }
+}
+
+function togglePurposeContent() {
+  var careerContent = document.getElementById('careerContent');
+  var environmentalContent = document.getElementById('environmentalSocialPurposeContent');
+  var purposeContent = document.getElementById('purposeContent');
+
+  if (purposeContent.style.display === 'block') {
+    purposeContent.style.display = 'none';
+  } else {
+    purposeContent.style.display = 'block';
+    careerContent.style.display = 'none';
+    environmentalContent.style.display = 'none';
+  }
+}
+
+// Event listeners for the buttons
+var careerButton = document.getElementById('careerButton');
+var environmentalButton = document.getElementById('environmentalButton');
+var purposeButton = document.getElementById('purposeButton');
+
+careerButton.addEventListener('click', function() {
+  toggleCareerContent();
+});
+
+environmentalButton.addEventListener('click', function() {
+  toggleEnvironmentalContent();
+});
+
+purposeButton.addEventListener('click', function() {
+  togglePurposeContent();
+});
+</script>
+</body>
+</html>
